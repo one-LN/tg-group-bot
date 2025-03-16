@@ -20,13 +20,13 @@
 --------------
 
 ```bash
-curl -o start.sh https://ghproxy.com/https://raw.githubusercontent.com/youshandefeiyang/feiyangdigital-bot/main/start.sh && chmod +x start.sh && ./start.sh
+curl -o start.sh https://ghproxy.com/https://raw.githubusercontent.com/one-LN/tg-group-bot/main/start.sh && chmod +x start.sh && ./start.sh
 ```
 
 3️⃣ 配置机器人
 ----------------
 
-- 前往 `/home/feiyangdigitalbotconf/` 目录，编辑 `conf.json` 文件：
+- 前往 `/root/docker/tg-group-bot/` 目录，编辑 `conf.json` 文件：
   1. 填入你的 `username` 和 `token` 到 `botConfig` 的 `name` 和 `token` 字段。
   2. 保存更改。
 
@@ -34,7 +34,7 @@ curl -o start.sh https://ghproxy.com/https://raw.githubusercontent.com/youshande
 ----------------
 
 - 确保你的网络可以连接到 Telegram 服务器。如果使用软路由，请使用增强代理。
-- 在 `/home/feiyangdigitalbotconf/` 目录下执行：
+- 在 `/root/docker/tg-group-bot/` 目录下执行：
 ```bash
 docker-compose up -d
 ```
@@ -42,7 +42,7 @@ docker-compose up -d
 ⏸️ 暂停容器
 ------------
 
-- 在 `/home/feiyangdigitalbotconf/` 目录下执行：
+- 在 `/root/docker/tg-group-bot/` 目录下执行：
 ```bash
 docker-compose stop
 ```
@@ -50,7 +50,7 @@ docker-compose stop
 🔥 重启容器
 ------------
 
-- 在 `/home/feiyangdigitalbotconf/` 目录下执行：
+- 在 `/root/docker/tg-group-bot/` 目录下执行：
 ```bash
 docker-compose restart
 ```
@@ -58,7 +58,7 @@ docker-compose restart
 🔍 查看日志
 ------------
 
-在 `/home/feiyangdigitalbotconf/` 目录下执行：
+在 `/root/docker/tg-group-bot/` 目录下执行：
 ```bash
 docker-compose logs -f 
 ```
@@ -66,7 +66,7 @@ docker-compose logs -f
 🔄 更新
 --------
 
-在 `/home/feiyangdigitalbotconf/` 目录下进行以下操作：
+在 `/root/docker/tg-group-bot/` 目录下进行以下操作：
 1.停止并移除卷：
 ```bash
 docker-compose down
@@ -74,7 +74,7 @@ docker-compose down
 2.删除数据库持久卷（❗️危险操作，你需要对比本仓库里的数据库文件是否更新过，否则不要执行，删除之前请备份各种关键词文档）：
 - 首先备份数据库至`/home/`目录下
 ```bash
-docker exec -it feiyangdigitalbotconf-mysql-1 mysqldump -uroot -ppassword bot  > /home/bot.sql
+docker exec -it feiyangdigitalbotconf-mysql-1 mysqldump -uroot -ppassword bot  > /root/docker/tg-group-bot/bot.sql
 ```
 - 删除数据库持久卷
 ```bash
