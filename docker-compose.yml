@@ -1,12 +1,10 @@
-version: '3'
-
 services:
   feiyangdigital-bot:
-    image: youshandefeiyang/feiyangdigital-bot:latest # 使用您在DockerHub上的镜像
+    image: one-LN/tg-group-bot:latest # 使用您在DockerHub上的镜像
     ports:
       - "38455:8080"
     volumes:
-      - /home/feiyangdigitalbotconf/config.json:/app/config.json
+      - ./config.json:/app/config.json
     restart: unless-stopped
     depends_on:
       - mysql
@@ -28,7 +26,7 @@ services:
       MYSQL_ROOT_HOST: '%'
     volumes:
       - mysql-data:/var/lib/mysql
-      - /home/feiyangdigitalbotconf/bot.sql:/docker-entrypoint-initdb.d/bot.sql
+      - ./bot.sql:/docker-entrypoint-initdb.d/bot.sql
     restart: unless-stopped
 
   redis:
