@@ -5,9 +5,9 @@ DIR="/root/docker/tg-group-bot"
 
 # 定义要下载的文件的URL
 URLS=(
-    "https://ghproxy.com/https://raw.githubusercontent.com/one-LN/tg-group-bot/main/config/bot.sql"
-    "https://ghproxy.com/https://raw.githubusercontent.com/one-LN/tg-group-bot/main/config/config.json"
-    "https://ghproxy.com/https://raw.githubusercontent.com/one-LN/tg-group-bot/main/docker-compose.yml"
+    "https://raw.githubusercontent.com/one-LN/tg-group-bot/main/config/bot.sql"
+    "https://raw.githubusercontent.com/one-LN/tg-group-bot/main/config/config.json"
+    "https://raw.githubusercontent.com/one-LN/tg-group-bot/main/docker-compose.yml"
 )
 
 # 检查目录是否存在，如果存在则删除并重新创建
